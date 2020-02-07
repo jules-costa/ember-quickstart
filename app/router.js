@@ -14,4 +14,8 @@ Router.map(function() {
   this.route('contact', {
     path: 'get-in-touch'
   });
+
+  this.route('rental', {
+    path: 'rental/:rental_id'
+  });
 });
