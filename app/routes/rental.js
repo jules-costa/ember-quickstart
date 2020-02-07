@@ -8,7 +8,7 @@ const COMMUNITY_CATEGORIES = [
 
 export default class RentalRoute extends Route {
     async model(params) {
-        let response = await fetch(`/api/rental/${params.rental_id}.json`);
+        let response = await fetch(`/api/rentals/${params.rental_id}.json`);
         let { data } = await response.json();
 
         let { id, attributes } = data;
@@ -20,6 +20,6 @@ export default class RentalRoute extends Route {
             type = 'Standalone';
         }
 
-        return { id, type, attributes }; 
+        return { id, type, ...attributes }; 
     }
 }
